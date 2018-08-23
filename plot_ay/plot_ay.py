@@ -20,6 +20,7 @@ def setDefaults():
     mpl.rcParams['legend.loc'] = 'best'
     mpl.rcParams['legend.fancybox'] = True
     mpl.rcParams['savefig.transparent'] = True
+    mpl.rcParams['figure.figsize'] = (10,8)
 
 
 def tidyUp(fig, ax, gridArgs={}, legendArgs={}, tightLayoutArgs={}):
@@ -38,9 +39,12 @@ def tidyUp(fig, ax, gridArgs={}, legendArgs={}, tightLayoutArgs={}):
     It might be redundant to have these additional subroutines for legends and grids.
     For now, I'll leave them in there and pass empty (or non-empty) kwargs
     """
-    ayLegend(fig, ax, legendArgs)
-    ayGrid(fig, ax, gridArgs)
-    ayTightLayout(fig, ax, tightLayoutArgs)
+    if legendArgs:
+        ayLegend(fig, ax, legendArgs)
+    if gridArgs:    
+        ayGrid(fig, ax, gridArgs)
+    if tightLayoutArgs:
+        ayTightLayout(fig, ax, tightLayoutArgs)
 
 def ayGrid(fig, ax, gridArgs):
     ax.grid(True, **gridArgs)
