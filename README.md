@@ -8,7 +8,7 @@ plot_ay
 Some matplotlib defaults and plot customization. 
 
 #### Quick Links
-* [matplotlib RC params] (https://matplotlib.org/users/customizing.html)
+* [matplotlib RC params](https://matplotlib.org/users/customizing.html)
 
 ### Copyright
 
