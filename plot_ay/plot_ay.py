@@ -5,33 +5,51 @@ Some matplotlib defaults and plot customization
 Handles the primary functions
 """
 import matplotlib as mpl
+mpl.use('agg')
 import matplotlib.pyplot as plt
 
 def setDefaults():
-    mpl.rcParams['font.fontsize'] = 18
+    mpl.rcParams['font.size'] = 18
     mpl.rcParams['axes.labelsize'] = 24
     mpl.rcParams['axes.titlesize'] = 28
     mpl.rcParams['xtick.labelsize'] = 18
     mpl.rcParams['ytick.labelsize'] = 18
+    mpl.rcParams['legend.fontsize'] = 18
+    mpl.rcParams['lines.linewidth'] = 3
+    mpl.rcParams['legend.framealpha'] = 1
+    mpl.rcParams['legend.loc'] = 'best'
+    mpl.rcParams['legend.fancybox'] = True
+    mpl.rcParams['savefig.transparent'] = True
 
-def tidyUp(gridArgs, legendArgs):
+
+def tidyUp(fig, ax, gridArgs={}, legendArgs={}, tightLayoutArgs={}):
     """ Umbrella function to tidy up plots
 
-    parameters
+    Parameters
     ----------
+    fig : mpl Figure
+    ax : mpl Axes
     gridArgs : grid arguments
     legendArgs: legend arguments
-    """
-    if legendArgs:
-        ayLegend(legendArgs)
-    if gridArgs:
-        ayGrid(gridArgs)
+    tightLayoutArgs: tight layout arguments
 
-def ayGrid(gridArgs):
+    Notes
+    -----
+    It might be redundant to have these additional subroutines for legends and grids.
+    For now, I'll leave them in there and pass empty (or non-empty) kwargs
+    """
+    ayLegend(fig, ax, legendArgs)
+    ayGrid(fig, ax, gridArgs)
+    ayTightLayout(fig, ax, tightLayoutArgs)
+
+def ayGrid(fig, ax, gridArgs):
     ax.grid(True, **gridArgs)
 
-def ayLegend(legendArgs):
+def ayLegend(fig, ax, legendArgs):
     ax.legend(**legendArgs)
+
+def ayTightLayout(fig, ax, tightLayoutArgs):
+    fig.tight_layout(**tightLayoutArgs)
 
 
 def canvas(with_attribution=True):
