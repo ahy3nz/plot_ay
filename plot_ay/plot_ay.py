@@ -31,7 +31,7 @@ def ayGrid(gridArgs):
     ax.grid(True, **gridArgs)
 
 def ayLegend(legendArgs):
-    ax.legend(legendArgs)
+    ax.legend(**legendArgs)
 
 
 def canvas(with_attribution=True):
