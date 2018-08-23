@@ -4,6 +4,15 @@ Some matplotlib defaults and plot customization
 
 Handles the primary functions
 """
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+def setDefaults():
+    mpl.rcParams['font.fontsize'] = 18
+    mpl.rcParams['axes.labelsize'] = 24
+    mpl.rcParams['axes.titlesize'] = 28
+    mpl.rcParams['xtick.labelsize'] = 18
+    mpl.rcParams['ytick.labelsize'] = 18
 
 
 def canvas(with_attribution=True):
