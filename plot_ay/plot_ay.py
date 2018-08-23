@@ -14,6 +14,25 @@ def setDefaults():
     mpl.rcParams['xtick.labelsize'] = 18
     mpl.rcParams['ytick.labelsize'] = 18
 
+def tidyUp(gridArgs, legendArgs):
+    """ Umbrella function to tidy up plots
+
+    parameters
+    ----------
+    gridArgs : grid arguments
+    legendArgs: legend arguments
+    """
+    if legendArgs:
+        ayLegend(legendArgs)
+    if gridArgs:
+        ayGrid(gridArgs)
+
+def ayGrid(gridArgs):
+    ax.grid(True, **gridArgs)
+
+def ayLegend(legendArgs):
+    ax.legend(legendArgs)
+
 
 def canvas(with_attribution=True):
     """
