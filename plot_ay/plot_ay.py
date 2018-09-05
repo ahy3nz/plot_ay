@@ -9,11 +9,11 @@ import matplotlib.pyplot as plt
 
 def setDefaults():
     mpl.rcParams['font.size'] = 18
-    mpl.rcParams['axes.labelsize'] = 24
-    mpl.rcParams['axes.titlesize'] = 28
-    mpl.rcParams['xtick.labelsize'] = 18
-    mpl.rcParams['ytick.labelsize'] = 18
-    mpl.rcParams['legend.fontsize'] = 18
+    mpl.rcParams['axes.labelsize'] = 28
+    mpl.rcParams['axes.titlesize'] = 32
+    mpl.rcParams['xtick.labelsize'] = 24
+    mpl.rcParams['ytick.labelsize'] = 24
+    mpl.rcParams['legend.fontsize'] = 24
     mpl.rcParams['lines.linewidth'] = 3
     mpl.rcParams['legend.framealpha'] = 1
     mpl.rcParams['legend.loc'] = 'best'
