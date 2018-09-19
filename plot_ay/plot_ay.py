@@ -5,7 +5,7 @@ Some matplotlib defaults and plot customization
 Handles the primary functions
 """
 import matplotlib as mpl
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 def setDefaults():
     mpl.rcParams['font.size'] = 18
@@ -25,7 +25,7 @@ def setDefaults():
     mpl.rcParams['figure.figsize'] = (10,8)
 
 
-def tidyUp(fig, ax, gridArgs={}, legendArgs={}, tightLayoutArgs={}):
+def tidyUp(fig, ax, gridArgs=None, legendArgs=None, tightLayoutArgs=None):
     """ Umbrella function to tidy up plots
 
     Parameters
@@ -41,11 +41,11 @@ def tidyUp(fig, ax, gridArgs={}, legendArgs={}, tightLayoutArgs={}):
     It might be redundant to have these additional subroutines for legends and grids.
     For now, I'll leave them in there and pass empty (or non-empty) kwargs
     """
-    if legendArgs:
+    if legendArgs is not None:
         ayLegend(fig, ax, legendArgs)
-    if gridArgs:    
+    if gridArgs is not None:    
         ayGrid(fig, ax, gridArgs)
-    if tightLayoutArgs:
+    if tightLayoutArgs is not None:
         ayTightLayout(fig, ax, tightLayoutArgs)
 
 def ayGrid(fig, ax, gridArgs):
