@@ -15,6 +15,8 @@ def setDefaults():
     mpl.rcParams['ytick.labelsize'] = 28
     mpl.rcParams['legend.fontsize'] = 24
     mpl.rcParams['lines.linewidth'] = 3
+    mpl.rcParams['lines.markersize'] = 6
+    
 
     mpl.rcParams['legend.framealpha'] = 1
     mpl.rcParams['legend.loc'] = 'best'
