@@ -17,6 +17,9 @@ def test_plot_ay_imported():
 def test_defaults():
     plot_ay.setDefaults()
 
+def test_canvas():
+    plot_ay.canvas(with_attribution=True)
+
 def test_grid():
     import matplotlib
     matplotlib.use('agg')
