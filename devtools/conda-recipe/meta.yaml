@@ -15,12 +15,15 @@ requirements:
 
   run:
     - python
+    - matplotlib
 
 test:
   requires:
     - pytest
+    - matplotlib
   imports:
     - plot_ay
+    - matplotlib
 
 about:
   home: add_url_here
