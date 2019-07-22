@@ -10,6 +10,7 @@ import matplotlib as mpl
 def setDefaults():
     mpl.rcParams['font.size'] = 18
     mpl.rcParams['axes.labelsize'] = 32
+    mpl.rcParams['axes.labelweight'] = 'bold'
     mpl.rcParams['axes.titlesize'] = 32
     mpl.rcParams['xtick.labelsize'] = 28
     mpl.rcParams['ytick.labelsize'] = 28
